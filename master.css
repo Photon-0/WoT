@@ -1,0 +1,412 @@
+/* body { margin-left: 5%; margin-right: 5%; font-family: Georgia, "Times New Roman", Times, lucidabright, serif; }
+
+p {text-indent: 2em; }
+.smallcaps {font-variant: small-caps}
+ ul {list-style-type: none;}
+.r {text-align: right}
+.lis {text-align: left; font-size: 90%}
+
+ 
+h1 {
+        font-family: Garamond, "Times New Roman", Times, lucidabright, serif;
+        font-size: 48pt; text-align: center; 
+        margin-top: 0px; margin-bottom: 1em; }
+
+h2 {
+        font-family: Garamond, "Times New Roman", Times, lucidabright, serif;
+        font-size: 36pt; text-align: center; }
+
+h3 {
+        font-family: Garamond, "Times New Roman", Times, lucidabright, serif;
+        font-size: 28pt; text-align: center; }
+
+h4 {
+        font-family: Garamond, "Times New Roman", Times, lucidabright, serif;
+        font-size: 18pt; text-align: center;  }
+
+.dropcap {
+        font-family: CobleighTitlingCaps, Garamond, "Times New Roman", Times, lucidabright, serif;
+        font-size: 72pt; font: bold; width: 1.4em; text-align: center; 
+        float: left; }
+
+.drop {
+        text-indent: 0;  }
+
+.prophecy { text-indent: 0;
+        font-style: italic;
+        margin-right: 5%; margin-left: 5%;
+        text-align: center;}
+        
+.prophecy_sig {
+        text-indent: 0;  text-align: right; 
+        margin-right: 20%; margin-left: 5%;  }
+
+.verse {
+        font-style: italic; text-indent: 0;   margin-left: 2em;}
+        
+.verse_quote {
+        font-style: italic;  margin-left: 2em; text-indent: 0; }
+        
+.note {
+        font-style: italic; text-indent: .1em;  text-align: justify;   margin-left: 2em; margin-right: 2em }
+        
+.note_sig {
+        font-style: italic; text-indent: 0;  text-align: right; margin-right: 2em }
+
+.nav {
+        font-family: "Trebuchet MS", Arial, Helvetica,  Lucida, sans-serif;
+        text-indent: 0; font-size: 80%; text-align: center;
+        margin-top: 0; margin-bottom: 0; }
+div {
+        text-align: center; }
+
+hr { height: 1px; width: 33%; text-align: center; }
+
+.verse-sig
+    {
+    margin-left: 20%; margin-right: 25%; margin-top: .25em; margin-bottom: 2em;
+    text-indent: 0;  text-align: right;  font-size: 90%;
+}
+
+.print
+    {
+    margin-left: 5%; margin-right: 5%;  margin-top: .5em; margin-bottom: .5em;
+    text-indent: 2em;  text-align: justify;
+}
+
+.pic-left
+    {
+    float: left; width: 250px; background: #ffffff;
+    margin-left: 2.5%; margin-right: 2.5%; margin-top: .5em; margin-bottom: .5em;
+}
+.pic-right
+    {
+    float: right; width: 250px; background: #ffffff;
+    margin-left: 2.5%; margin-right: 2.5%; margin-top: .5em; margin-bottom: .5em;
+}
+.bar-left
+    {
+    float: left; width: 250px; background: #f5e6dc; border: 1px solid #666666;
+    margin-left: 2.5%; margin-right: 2.5%; margin-top: .5em; margin-bottom: .5em; padding: 20px;
+
+}
+.bar-right
+    {
+    float: right; width: 250px; background: #f5e6dc; border: 1px solid #666666;
+    margin-left: 2.5%; margin-right: 2.5%; margin-top: .5em; margin-bottom: .5em; padding: 20px;
+
+}
+.bar-mid
+    {
+    background: #f5e6dc; border: 1px solid; border-color: #666666;
+    margin-left: 15%; margin-right: 15%; margin-top: 1em; margin-bottom: 1.5em; padding: 20px;
+}
+.side-text
+    {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-indent: 2em; text-align: left; font-size: 90%;
+    margin-left: 0px; margin-right: 0px;  margin-top: .25em; margin-bottom: .25em;
+}
+.mid-text
+    {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-indent: 2em; text-align: justify; font-size: 90%;
+    margin-left: 0px; margin-right: 0px;  margin-top: .25em; margin-bottom: .25em;
+}
+.flag
+    {
+    background: #ffffff; border: 2px solid; border-color: #666666;
+    margin-left: 20%; margin-right: 20%; margin-top: 1em; margin-bottom: 1em; padding: 20px;
+}
+.clear
+    {
+    clear: both; margin-top: 0px; margin-bottom: 0px; font-size: 1px;
+}
+.contents-1
+    {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-indent: 0px; font-size: 90%;
+    margin-left: 0px; margin-right: 0px; margin-top: .5em; margin-bottom: .5em;
+    text-align: left;
+}
+.contents-2
+    {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-indent: 0px; font-size: 80%;
+    margin-left: 2em; margin-right: 0px; margin-top: .25em; margin-bottom: .25em;
+    text-align: left;
+}
+.contents-3
+    {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-indent: 0px; font-size: 70%;
+    margin-left: 4em; margin-right: 0px; margin-top: .25em; margin-bottom: .25em;
+    text-align: left;
+} */
+
+
+
+
+
+
+
+
+
+
+/* Base Page & Reader Settings */
+body { 
+    margin: 0 auto;
+    max-width: 820px; /* Optimal reading width for 60-75 characters per line */
+    width: 92%; /* Ensures padding on smaller screens */
+    padding: 2.5rem 0;
+    font-family: Georgia, "Times New Roman", Times, lucidabright, serif; 
+    font-size: 1.35rem; /* ~21.5px base size for effortless reading */
+    line-height: 1.7; /* Generous spacing between lines */
+    background-color: #181818; /* Neutral dark charcoal */
+    color: #dcdcdc; /* Pure grayscale off-white text */
+}
+
+/* Custom Dark Theme Scrollbar (Firefox) */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #383838 #121212;
+}
+
+/* Custom Dark Theme Scrollbar (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #383838;
+    border-radius: 5px;
+    border: 2px solid #121212; /* Creates a sleek padded margin around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d2ab52; /* Subtle amber highlight when hovering over the scrollbar */
+}
+
+/* Link Styling (Warm Yellow / Amber Accent) */
+a {
+    color: #d2ab52; /* Warm yellow/amber accent */
+    text-decoration: none;
+    border-bottom: 1px dotted #a8873d;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+a:hover {
+    color: #ebd188;
+    border-bottom: 1px solid #ebd188;
+}
+
+a:visited {
+    color: #b5913e; /* Softer yellow tone for visited links */
+    border-bottom: 1px dotted #b5913e;
+}
+
+/* Typography & Headings */
+p { 
+    text-indent: 2em; 
+    margin-top: 0;
+    margin-bottom: 0.8em; /* Gentle gap between paragraphs */
+}
+
+.smallcaps { 
+    font-variant: small-caps; 
+    letter-spacing: 0.05em;
+}
+
+ul { 
+    list-style-type: none; 
+    padding-left: 0;
+}
+
+.r { text-align: right; }
+.lis { text-align: left; font-size: 0.95em; }
+
+h1, h2, h3, h4 {
+    font-family: Garamond, "Times New Roman", Times, lucidabright, serif;
+    color: #f0f0f0; /* Crisp grayscale off-white headings */
+    font-weight: normal;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 3rem; 
+    text-align: center; 
+    margin-top: 0; 
+    margin-bottom: 1.75rem; 
+}
+
+h2 {
+    font-size: 2.35rem; 
+    text-align: center; 
+    margin-top: 2.25rem;
+    margin-bottom: 1.25rem;
+}
+
+h3 {
+    font-size: 1.85rem; 
+    text-align: center; 
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.4rem; 
+    text-align: center;  
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Drop Cap Enhancements */
+.dropcap {
+    font-family: CobleighTitlingCaps, Garamond, "Times New Roman", Times, lucidabright, serif;
+    font-size: 4.5rem; 
+    line-height: 0.8;
+    float: left; 
+    margin-right: 0.18em;
+    margin-top: 0.05em;
+    color: #d2ab52; /* Yellow drop cap accent matching links */
+}
+
+.drop {
+    text-indent: 0;  
+}
+
+/* Literary / Quotation Styles */
+.prophecy { 
+    text-indent: 0;
+    font-style: italic;
+    margin: 1.75rem 5%;
+    text-align: center;
+    color: #e5e5e5;
+}
+        
+.prophecy_sig {
+    text-indent: 0;  
+    text-align: right; 
+    margin-right: 10%; 
+    margin-left: 5%;  
+}
+
+.verse, .verse_quote {
+    font-style: italic; 
+    text-indent: 0;   
+    margin-left: 2em;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+}
+        
+.note {
+    font-style: italic; 
+    text-indent: 0.1em;  
+    text-align: justify;   
+    margin: 1.25rem 2em; 
+    font-size: 0.95em;
+    color: #b0b0b0; /* Grayscale footnote text */
+}
+        
+.note_sig {
+    font-style: italic; 
+    text-indent: 0;  
+    text-align: right; 
+    margin-right: 2em; 
+}
+
+/* Navigation & Layout Elements */
+.nav {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-indent: 0; 
+    font-size: 0.9em; 
+    text-align: center;
+    margin: 1.25rem 0; 
+}
+
+div { text-align: center; }
+
+hr { 
+    height: 1px; 
+    width: 25%; 
+    margin: 2.5rem auto;
+    border: none;
+    background-color: #383838;
+}
+
+.verse-sig {
+    margin-left: 20%; 
+    margin-right: 25%; 
+    margin-top: 0.25em; 
+    margin-bottom: 2em;
+    text-indent: 0;  
+    text-align: right;  
+    font-size: 0.95em;
+}
+
+.print {
+    margin: 0.6em 0;
+    text-indent: 2em;  
+    text-align: justify;
+}
+
+/* Callouts & Containers */
+.pic-left, .pic-right {
+    width: 250px; 
+    background: #222222; 
+    margin: 0.5em 1rem 0.5em 0;
+    border-radius: 6px;
+}
+
+.pic-left { float: left; margin-right: 1.5rem; }
+.pic-right { float: right; margin-left: 1.5rem; }
+
+.bar-left, .bar-right, .bar-mid {
+    background: #222222; 
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.bar-left { float: left; width: 250px; margin: 0.5em 1.5rem 0.5em 0; }
+.bar-right { float: right; width: 250px; margin: 0.5em 0 0.5em 1.5rem; }
+.bar-mid { margin: 1.75rem 5%; }
+
+.side-text, .mid-text {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 0.95em;
+    margin: 0.25em 0;
+}
+
+.side-text { text-indent: 1.5em; text-align: left; }
+.mid-text { text-indent: 1.5em; text-align: justify; }
+
+.flag {
+    background: #222222; 
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    margin: 1.75rem 5%; 
+    padding: 1.5rem;
+}
+
+.clear {
+    clear: both; 
+    margin: 0; 
+    font-size: 1px;
+}
+
+/* Table of Contents Formatting */
+.contents-1, .contents-2, .contents-3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-indent: 0;
+    text-align: left;
+}
+
+.contents-1 { font-size: 1em; margin: 0.5em 0; font-weight: bold; }
+.contents-2 { font-size: 0.9em; margin: 0.25em 0 0.25em 1.5em; color: #b8b8b8; }
+.contents-3 { font-size: 0.8em; margin: 0.25em 0 0.25em 3em; color: #9a9a9a; }
