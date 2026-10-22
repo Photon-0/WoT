@@ -166,6 +166,30 @@ body {
     color: #dcdcdc; /* Pure grayscale off-white text */
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    body {
+        width: auto;
+        padding: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .pic-left,
+    .pic-right,
+    .bar-left,
+    .bar-right {
+        float: none;
+        width: auto;
+        max-width: 100%;
+        margin: 1rem auto;
+    }
+}
+
 /* Custom Dark Theme Scrollbar (Firefox) */
 * {
     scrollbar-width: auto;
