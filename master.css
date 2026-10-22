@@ -418,6 +418,129 @@ hr {
     padding: 1.5rem;
 }
 
+.bookmark-controls {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    max-width: calc(100vw - 2rem);
+    padding: 0.75rem;
+    border: 1px solid #555555;
+    border-radius: 8px;
+    background: #222222;
+    box-shadow: 0 2px 12px #00000099;
+    font: 0.9rem Arial, Helvetica, sans-serif;
+}
+
+.bookmark-controls:not(.is-collapsed) {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    width: max-content;
+    box-sizing: border-box;
+}
+
+.bookmark-controls button {
+    min-height: 2.5rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #a8873d;
+    border-radius: 4px;
+    background: #181818;
+    color: #d2ab52;
+    font: inherit;
+    cursor: pointer;
+}
+
+.bookmark-controls.is-collapsed {
+    gap: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.bookmark-controls.is-collapsed button:not(.bookmark-toggle),
+.bookmark-controls.is-collapsed .bookmark-status {
+    display: none;
+}
+
+.bookmark-controls .bookmark-toggle {
+    font-weight: bold;
+}
+
+.bookmark-controls button:hover:not(:disabled) {
+    background: #383838;
+    color: #ebd188;
+}
+
+.bookmark-controls button:focus-visible {
+    outline: 2px solid #ebd188;
+    outline-offset: 2px;
+}
+
+.bookmark-controls button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.bookmark-status {
+    grid-column: 1 / -1;
+    justify-self: end;
+    max-width: 24rem;
+    color: #dcdcdc;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    text-align: right;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .bookmark-controls {
+        right: 0.5rem;
+        bottom: 0.5rem;
+        gap: 0.3rem;
+        padding: 0.4rem;
+        font-size: 0.8rem;
+    }
+
+    .bookmark-controls:not(.is-collapsed) {
+        grid-template-columns: repeat(2, max-content);
+        max-width: calc(100vw - 1rem);
+    }
+
+    .bookmark-controls:not(.is-collapsed) .bookmark-resume {
+        grid-column: 1 / -1;
+        justify-self: end;
+    }
+
+    .bookmark-status {
+        max-width: 14rem;
+    }
+
+    .bookmark-controls button {
+        min-height: 2.5rem;
+        padding: 0.4rem 0.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .bookmark-controls {
+        gap: 0.2rem;
+        padding: 0.3rem;
+        font-size: 0.75rem;
+    }
+
+    .bookmark-controls button {
+        min-height: 2.25rem;
+        padding: 0.3rem 0.4rem;
+    }
+}
+
 .clear {
     clear: both; 
     margin: 0; 
