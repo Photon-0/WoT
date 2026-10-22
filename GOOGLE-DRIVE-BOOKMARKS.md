@@ -19,6 +19,10 @@ creates it; later saves replace its contents.
 If Google does not offer anonymous **Anyone** access for your account, this
 no-sign-in setup will not work with that account.
 
+If you already deployed the earlier pixel-based bookmark script, replace its
+`Code.gs` with the updated version and edit the deployment to use a new version.
+Otherwise, the existing endpoint will reject percentage-based saves.
+
 ## Connect devices
 
 Deploy the reader to GitHub Pages and open it over HTTPS. On each device, use
@@ -27,8 +31,11 @@ prompted. The URL is saved in that browser on that device. The reader fetches
 the shared bookmark when opened and before resuming; saving updates the Drive
 file.
 
-The bookmark contains the page URL and scroll position. To avoid sending
-private information to a public endpoint, do not add personal data to it.
+The bookmark contains the page URL and percentage of the chapter's scrollable
+height, so it resumes at roughly the same relative position on screens with
+different sizes. Existing bookmarks saved in pixels continue to work; new
+saves use percentages. To avoid sending private information to a public
+endpoint, do not add personal data to the bookmark.
 
 ## Access warning
 

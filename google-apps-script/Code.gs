@@ -27,10 +27,16 @@ function doGet(e) {
 }
 
 function validateBookmark(bookmark) {
+  var hasPercentage = bookmark &&
+    typeof bookmark.scrollPercent === "number" &&
+    Number.isFinite(bookmark.scrollPercent) &&
+    bookmark.scrollPercent >= 0 && bookmark.scrollPercent <= 100;
+  var hasLegacyOffset = bookmark &&
+    typeof bookmark.scrollY === "number" &&
+    Number.isFinite(bookmark.scrollY) &&
+    bookmark.scrollY >= 0 && bookmark.scrollY <= 100000000;
   if (!bookmark || typeof bookmark.url !== "string" ||
-      typeof bookmark.scrollY !== "number" ||
-      !Number.isFinite(bookmark.scrollY) ||
-      bookmark.scrollY < 0 || bookmark.scrollY > 100000000 ||
+      (!hasPercentage && !hasLegacyOffset) ||
       typeof bookmark.label !== "string" || bookmark.label.length > 300) {
     throw new Error("Bookmark data is invalid.");
   }
@@ -39,11 +45,13 @@ function validateBookmark(bookmark) {
     throw new Error("Only HTTPS bookmark URLs are accepted.");
   }
 
-  return {
-    url: bookmark.url,
-    scrollY: bookmark.scrollY,
-    label: bookmark.label
-  };
+  var savedBookmark = { url: bookmark.url, label: bookmark.label };
+  if (hasPercentage) {
+    savedBookmark.scrollPercent = bookmark.scrollPercent;
+  } else {
+    savedBookmark.scrollY = bookmark.scrollY;
+  }
+  return savedBookmark;
 }
 
 function loadBookmark() {

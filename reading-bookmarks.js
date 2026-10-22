@@ -41,9 +41,13 @@
     }
 
     function validateBookmark(saved) {
+        var hasPercentage = saved && typeof saved.scrollPercent === "number" &&
+            Number.isFinite(saved.scrollPercent) && saved.scrollPercent >= 0 &&
+            saved.scrollPercent <= 100;
+        var hasLegacyOffset = saved && typeof saved.scrollY === "number" &&
+            Number.isFinite(saved.scrollY) && saved.scrollY >= 0;
         if (!saved || typeof saved.url !== "string" ||
-            typeof saved.scrollY !== "number" || !Number.isFinite(saved.scrollY) ||
-            saved.scrollY < 0 || typeof saved.label !== "string") {
+            (!hasPercentage && !hasLegacyOffset) || typeof saved.label !== "string") {
             throw new Error("The saved bookmark has invalid data.");
         }
         return saved;
@@ -54,7 +58,31 @@
     }
 
     function describeBookmark(saved) {
+        if (typeof saved.scrollPercent === "number") {
+            return saved.label + " at " + saved.scrollPercent.toFixed(1) + "%";
+        }
         return saved.label + " at " + Math.round(saved.scrollY) + " px";
+    }
+
+    function getScrollPercent() {
+        var documentHeight = Math.max(
+            document.documentElement.scrollHeight,
+            document.body.scrollHeight
+        );
+        var maxScroll = Math.max(0, documentHeight - window.innerHeight);
+        return maxScroll === 0 ? 0 : window.scrollY / maxScroll * 100;
+    }
+
+    function getScrollPosition(saved) {
+        if (typeof saved.scrollPercent === "number") {
+            var documentHeight = Math.max(
+                document.documentElement.scrollHeight,
+                document.body.scrollHeight
+            );
+            var maxScroll = Math.max(0, documentHeight - window.innerHeight);
+            return maxScroll * saved.scrollPercent / 100;
+        }
+        return saved.scrollY;
     }
 
     function setBookmark(saved) {
@@ -160,7 +188,7 @@
     function restoreAfterLoad(saved) {
         var restore = function () {
             if (window.location.href === saved.url) {
-                window.scrollTo(0, saved.scrollY);
+                window.scrollTo(0, getScrollPosition(saved));
             }
         };
 
@@ -276,7 +304,7 @@
 
         var savedBookmark = {
             url: window.location.href,
-            scrollY: window.scrollY,
+            scrollPercent: getScrollPercent(),
             label: document.title + " — " + chapterLabel
         };
 
@@ -331,7 +359,7 @@
             }
 
             if (window.location.href === saved.url) {
-                window.scrollTo(0, saved.scrollY);
+                window.scrollTo(0, getScrollPosition(saved));
                 setStatus("Resumed: " + describeBookmark(saved));
                 expandControls();
                 return;
@@ -381,8 +409,10 @@
             sessionStorage.removeItem(pendingKey);
             var pendingBookmark = JSON.parse(pendingValue);
             if (pendingBookmark && pendingBookmark.url === window.location.href &&
-                typeof pendingBookmark.scrollY === "number" &&
-                Number.isFinite(pendingBookmark.scrollY) && pendingBookmark.scrollY >= 0) {
+                (typeof pendingBookmark.scrollPercent === "number" ||
+                    (typeof pendingBookmark.scrollY === "number" &&
+                        Number.isFinite(pendingBookmark.scrollY) && pendingBookmark.scrollY >= 0))) {
+                validateBookmark(pendingBookmark);
                 restoreAfterLoad(pendingBookmark);
                 setStatus("Resumed: " + describeBookmark(pendingBookmark));
                 expandControls();
